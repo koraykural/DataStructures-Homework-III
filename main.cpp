@@ -114,14 +114,13 @@ void Network::create_network_from_file(char* file_path) {
   int parent_ID;
   while (1) {  
 		fscanf(network_data, "%s %d %d", &node_type[0], &ID, &parent_ID); 
-    if ( feof(network_data) ) break;
-
     if(node_type[0] == 'B') {
       network.add_base(ID, parent_ID);
     }
     else if(node_type[0] == 'M') {
       network.add_mobile(ID, parent_ID);
     }
+    if ( feof(network_data) ) break;
 	}
   fclose(network_data);
 }
@@ -187,7 +186,6 @@ void Network::add_mobile(int ID, int parent_ID) {
   MobileNode* new_mobile = new MobileNode();
   new_mobile->ID = ID;
   new_mobile->next_mobile = NULL;
-
   if(base_node->first_mobile == NULL) {
     // New mobile is the first mobile connected to that base
     base_node->first_mobile = new_mobile;

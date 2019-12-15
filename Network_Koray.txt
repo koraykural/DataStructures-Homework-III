@@ -1,0 +1,16 @@
+BS 2 0
+BS 3 0 
+BS 6 3
+BS 8 3
+BS 5 0
+BS 4 5
+BS 1 8
+MH 1 3
+MH 7 2
+MH 5 2
+MH 3 1
+MH 2 3
+MH 9 5
+MH 10 5
+MH 15 5
+MH 11 4

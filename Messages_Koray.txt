@@ -1,0 +1,6 @@
+Bu sefer>11
+neden>1
+siir>3
+cikmadi>15
+easteregg>16
+
