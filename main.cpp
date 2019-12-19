@@ -255,25 +255,24 @@ void Network::send_message(MessageNode message_data) {
   // Traverse tree recursively and return path to mobile host
   string* path_to_MH = network.path_to_MH(&central_controller, message_data.target);
   cout << endl;
-  if(*path_to_MH != "") {
+
+  if(*path_to_MH != "")
     cout << "Message:" << message_data.text << " To:" << *path_to_MH << " mh_" << message_data.target << endl;
-  }
-  else {
+  else 
     cout << "Can not be reached the mobile host mh_" << message_data.target << " at the moment" << endl;
-  }
+
   delete path_to_MH;
 }
 
 void Network::clear_network(BaseNode* current_base) {
-  if(current_base->first_child) {
+  if(current_base->first_child)
     network.clear_network(current_base->first_child);
-  }
-  if(current_base->next_sibling){
+
+  if(current_base->next_sibling)
     network.clear_network(current_base->next_sibling);
-  }
-  if(current_base != &central_controller) {
+
+  if(current_base != &central_controller)
     delete current_base;
-  }
 }
 
 
